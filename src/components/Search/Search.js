@@ -22,11 +22,8 @@ export class Search extends React.Component {
     };
 
     handleSearch (event) {
-        this.handleDateChange(event);
-
         this.props.searchRAWG(this.state.date);
         event.preventDefault();
-        
     }
     
 

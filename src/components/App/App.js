@@ -1,47 +1,40 @@
-import logo from '../../logo.svg';
 import './App.css';
 import React from 'react';
 import { Game } from '../Game/Game';
 import { GameList } from '../GameList/GameList';
-import { Search } from '../Search/Search';
+import { Search }  from '../Search/Search';
+import RAWG from '../../util/RAWG';
 
-// Hard coded example game for testing
-const game = {
-  name: 'God of War',
-  releaseDate: '1999-10-05',
-  gameImg: 'background_image',
-  esrbRating: 'M',
-  developers: 'Valve',
-  publishers: 'Sony',
-  genres: 'Action',
-  tags: 'Singleplayer',
-  creators: 'Jane Doe'
-};
 
-const games = [
-  game,
-  game,
-  game,
-  game,
-  game,
-  game
-];
 
 class App extends React.Component {
   constructor (props) {
     super(props);
+    this.state = {
+      games: []
+    };
+
+    this.searchRAWG = this.searchRAWG.bind(this);
   };
 
   searchRAWG(date) {
-    console.log(`Searching RAWG with ${date}`);
+    RAWG.search(date).then(games => {
+      this.setState({
+        games: games
+      })
+      console.log(this.state);
+
+    });
   };
   
   render () {
     return (
       <div className='App'>
-        <h1>Games of the Day</h1>
+        <div className='jumbotron text-center'>
+          <h1>Games of the Day</h1>
+        </div>
         <Search searchRAWG={this.searchRAWG} />
-        <GameList games={games} />
+        <GameList games={this.state.games} />
       </div>
     );
   }
