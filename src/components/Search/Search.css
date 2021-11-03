@@ -1,0 +1,9 @@
+.search-selection {
+    display: block;
+}
+
+.search-fields input, button {
+    height: 3rem;
+    margin: 1rem;
+    padding: .5rem;
+}

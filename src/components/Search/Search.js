@@ -29,10 +29,10 @@ export class Search extends React.Component {
 
     render () {
         return (
-            <div className="SearchSelection">
-                <div className='Search-fields'>
+            <div className="search-selection">
+                <div className='search-fields'>
                     <input onChange={this.handleDateChange} type='date' />
-                    <button onClick={this.handleSearch}> 
+                    <button onClick={this.handleSearch} className='btn btn-primary'> 
                         Search Games!
                     </button>
                 </div>

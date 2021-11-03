@@ -1,10 +1,11 @@
-const apiKey = '';
+
 
 const RAWG = {
     search (date) {
-        return fetch(`https://cors-anywhere.herokuapp.com/https://api.rawg.io/api/games?key=${apiKey}&dates=${date},${date}`).then(response => {
+        return fetch(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_RAWG_API_KEY}&dates=${date},${date}`).then(response => {
             return response.json();
         }).then(jsonResponse => {
+            
             if(jsonResponse.results){
                 console.log(jsonResponse);
                 return jsonResponse.results.map(game => {
@@ -12,8 +13,12 @@ const RAWG = {
                     return {
                         id: game.id,
                         name: game.name,
-                        esrbRating: game.esrb_rating,
-                        gameImage: game.background_image
+                        esrbRating: game.esrbRating,
+                        gameImage: game.background_image,
+                        genres: game.genres,
+                        metaCriticScore: game.metacritic,
+                        platform: game.platform,
+                        screenShots: game.short_screenshots
                     }
                     
                 })
