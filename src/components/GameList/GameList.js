@@ -5,7 +5,7 @@ import { Game } from '../Game/Game';
 export class GameList extends React.Component {
     render () {
         return (
-                <div className='GameList container'>
+                <div className='game-container'>
                     { console.log(this.props.games)}
                     {this.props.games.map(game => {
                         return <Game game={game} key={game.id} />

@@ -1,13 +1,24 @@
-.App {
+body {
   text-align: center;
-  background-color: rgb(32, 29, 29);
 }
 
-h1 {
-  font-size: 5em;
-  color:rgb(255, 255, 255);
-  margin: 3rem;
-  border: 5px black;
-  
+body a {
+  color:rgb(179, 173, 173);
 }
+
+header {
+  color: #e7dfd5;
+}
+
+.footer {
+  border-top: rgb(209, 208, 208) 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-size: 1rem;
+  margin-bottom: 0%;
+  color: #e7dfd5;
+}
+
+
 

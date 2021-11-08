@@ -1,5 +1,6 @@
 import React from 'react';
 import './Search.css';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -31,7 +32,7 @@ export class Search extends React.Component {
         return (
             <div className="search-selection">
                 <div className='search-fields'>
-                    <input onChange={this.handleDateChange} type='date' />
+                    <input id='date-input' onChange={this.handleDateChange} type='date' />
                     <button onClick={this.handleSearch} className='btn btn-primary'> 
                         Search Games!
                     </button>

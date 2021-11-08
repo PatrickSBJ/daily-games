@@ -26,17 +26,16 @@ export class Game extends React.Component {
     */
     render() {
         return (
-            <div className='game'>
+            <section className='game'>
                 {console.log(this.props.game)}
-                <img src={this.props.game.gameImage} alt={this.props.game.name + ' game art'} className='img-circle'/>
+                <figure>
+                    <img src={this.props.game.gameImage} alt={this.props.game.name + ' game art'} className='img-responsive'/>
+                </figure>
                 <div className='game-details'>
-                    <p>{this.props.game.name}</p>
-                    <p>{this.props.game.name}</p>
-                    <p>{this.props.game.name}</p>
-                    <p>{this.props.game.name}</p>
+                    <p>{this.props.game.metaCriticScore}</p>
                     <p>{this.props.game.name}</p>
                 </div>
-            </div>
+            </section>
         )
     }
 }

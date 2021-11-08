@@ -1,8 +1,14 @@
-.game {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 16.66rem;
-    margin: 0 .5rem 2.3rem .5rem;
-    color: blanchedalmond;
+section {    
+    border: 1px solid #000;
+    color: #e7dfd5;
   }
+
+figure img {
+  height: 300px;
+  width: 300px;
+}
+
+figure {
+  height: 15rem;
+  width: 15rem;
+}
